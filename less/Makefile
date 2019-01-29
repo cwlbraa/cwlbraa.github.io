@@ -20,6 +20,6 @@ css_files := $(filter-out 1pxdeep.css,$(css_files))
 # - run the command `lessc -x --source-map foo.less foo.css`
 %.css: %.less
 	@echo "$< -> $@"
-	lessc -x --source-map $< $@
+	lessc -x $< $@
 
 css: $(css_files)
