@@ -18,8 +18,11 @@ css_files := $(filter-out 1pxdeep.css,$(css_files))
 # .less file, then make will run the the following commands:
 # - echo the string "foo.less -> foo.css"
 # - run the command `lessc -x --source-map foo.less foo.css`
-%.css: %.less
+%.css: %.less node_modules/bootstrap-less/
 	@echo "$< -> $@"
 	lessc -x $< $@
+
+node_modules/bootstrap-less/:
+	npm install bootstrap-less
 
 css: $(css_files)
