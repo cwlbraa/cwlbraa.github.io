@@ -25,4 +25,7 @@ css_files := $(filter-out 1pxdeep.css,$(css_files))
 node_modules/bootstrap-less/:
 	npm install bootstrap-less
 
+clean:
+	rm -rf $(css_files)
+
 css: $(css_files)
