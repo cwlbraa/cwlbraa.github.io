@@ -20,7 +20,7 @@ css_files := $(filter-out 1pxdeep.css,$(css_files))
 # - run the command `lessc -x --source-map foo.less foo.css`
 %.css: %.less node_modules/bootstrap-less/
 	@echo "$< -> $@"
-	lessc -x $< $@
+	lessc $< $@
 
 node_modules/bootstrap-less/:
 	npm install bootstrap-less
